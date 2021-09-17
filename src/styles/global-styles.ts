@@ -13,6 +13,17 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
+  html, body, #root {
+    height: 100%;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+  }
+
   body {
     font-family: 'DM Sans', sans-serif
   }
