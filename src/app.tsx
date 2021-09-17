@@ -1,13 +1,13 @@
-import * as S from './app-styles'
+import { Sidebar } from 'components/sidebar'
+import { MainContent } from 'components/content-area'
+
+import * as S from './styles/app-styles'
 
 export function App () {
   return (
-    <>
-      <S.Title>
-        App {' '}
-        <S.Span>Texto do span</S.Span> {' '}
-        <S.SpanStyled>Texto itálico</S.SpanStyled> {' '}
-      </S.Title>
-    </>
+    <S.Container>
+      <Sidebar />
+      <MainContent />
+    </S.Container>
   )
 }
