@@ -13,6 +13,12 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
+  input, textarea {
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+
   html, body, #root {
     height: 100%;
   }
