@@ -10,6 +10,7 @@ export const Sidebar = styled.aside`
 export const PrimaryTitle = styled.h1`
   display: flex;
   justify-content: center;
+  margin-top: 0;
   margin-bottom: 56.69px;
 `
 
