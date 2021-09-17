@@ -37,6 +37,10 @@ export const Link = styled.a`
   font-size: 1.6rem;
   color: ${props => props.theme.colors.gray};
   text-decoration: none;
+
+  ${FileItem}:hover & {
+    color: ${props => props.theme.colors.white};
+  }
 `
 
 export const ButtonDeleteFile = styled.button`
