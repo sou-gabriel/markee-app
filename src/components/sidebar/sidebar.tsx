@@ -1,4 +1,4 @@
-import { ListFiles } from 'components/list-files'
+import { ListFiles } from 'components/file-list'
 
 import { ReactComponent as Logo } from 'assets/images/logo.svg'
 import { ReactComponent as PlusIcon } from 'assets/images/plus-symbol.svg'
