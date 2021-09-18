@@ -1,5 +1,5 @@
 import * as S from './styles'
 
 export function Filename () {
-  return <S.Input placeholder='Nome do arquivo' />
+  return <S.Input type='text' placeholder='Nome do arquivo' />
 }
