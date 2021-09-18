@@ -2,12 +2,10 @@ import { FileItem } from 'components/file-item'
 
 import * as S from './styles'
 
-type FileType = {
-  id: string
-  name: string
-  content: string
-  active: boolean
-  status: 'editing' | 'saving' | 'saved'
+import { FileType } from 'resources/types/file'
+
+type ListFilesProps = {
+  files: FileType[]
 }
 
 const files: Array<FileType> = [
