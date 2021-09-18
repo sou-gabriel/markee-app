@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, Ref } from 'react'
 
 import { Filename } from 'components/filename'
 import { TextArea } from 'components/text-area'
@@ -8,14 +8,18 @@ import { ReactComponent as TextFileIcon } from 'assets/images/file-text-blue.svg
 
 import * as S from './styles'
 
-export function MainContent () {
+type MainContentProps = {
+  inputRef: Ref<HTMLInputElement>
+}
+
+export function MainContent (props: MainContentProps) {
   const [content, setContent] = useState('')
 
   return (
     <S.Container>
       <S.Top>
         <TextFileIcon />
-        <Filename />
+        <Filename inputRef={props.inputRef} />
       </S.Top>
 
       <S.Left>

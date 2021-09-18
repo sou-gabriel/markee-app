@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, RefObject } from 'react'
 
 import { v4 as uuid } from 'uuid'
 
@@ -11,10 +11,16 @@ import * as S from './styles'
 
 import { FileType } from 'resources/types/file'
 
-export function Sidebar () {
+type SidebarProps = {
+  inputRef: RefObject<HTMLInputElement>
+}
+
+export function Sidebar (props: SidebarProps) {
   const [files, setFiles] = useState<FileType[]>([])
 
   const handleButtonNewFileClick = () => {
+    props.inputRef.current?.focus()
+
     const inactiveFiles = files.map(file => ({
       ...file,
       active: false,
