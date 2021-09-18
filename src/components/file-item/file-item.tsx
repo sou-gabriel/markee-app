@@ -5,14 +5,10 @@ import { ReactComponent as DeleteIcon } from 'assets/images/delete-icon.svg'
 
 import * as S from './styles'
 
+import { FileType } from 'resources/types/file'
+
 type FileItemProps = {
-  file: {
-    id: string
-    name: string
-    content: string
-    active: boolean
-    status: 'editing' | 'saving' | 'saved'
-  }
+  file: FileType
 }
 
 export function FileItem (props: FileItemProps) {

@@ -31,6 +31,10 @@ export const FileItem = styled.li<FileItemProps>`
 `
 
 export const Link = styled.a`
+  display: inline-block;
+  width: 175px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin-left: 16px;
   margin-right: auto;
   font-weight: 400;
