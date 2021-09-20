@@ -2,7 +2,7 @@ import { useState, RefObject } from 'react'
 
 import { v4 as uuid } from 'uuid'
 
-import { ListFiles } from 'components/file-list'
+import { FileList } from 'components/file-list'
 
 import { ReactComponent as Logo } from 'resources/assets/images/logo.svg'
 import { ReactComponent as PlusIcon } from 'resources/assets/images/plus-symbol.svg'
@@ -52,7 +52,7 @@ export function Sidebar (props: SidebarProps) {
         Adicionar arquivo
       </S.ButtonNewFile>
 
-      <ListFiles files={files} />
+      <FileList files={props.files} />
     </S.Sidebar>
   )
 }

@@ -4,14 +4,14 @@ import * as S from './styles'
 
 import { FileType } from 'resources/types/file'
 
-type ListFilesProps = {
+type FileListProps = {
   files: FileType[]
 }
 
-export function ListFiles (props: ListFilesProps) {
+export function FileList (props: FileListProps) {
   return (
-    <S.ListFiles>
+    <S.FileList>
       {props.files.map(file => <FileItem key={file.id} file={file} />)}
-    </S.ListFiles>
+    </S.FileList>
   )
 }
