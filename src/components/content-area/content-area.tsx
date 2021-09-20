@@ -8,11 +8,11 @@ import { ReactComponent as TextFileIcon } from 'resources/assets/images/file-tex
 
 import * as S from './styles'
 
-type MainContentProps = {
+type ContentAreaProps = {
   inputRef: Ref<HTMLInputElement>
 }
 
-export function MainContent (props: MainContentProps) {
+export function ContentArea (props: ContentAreaProps) {
   const [content, setContent] = useState('')
 
   return (
