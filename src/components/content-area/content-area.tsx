@@ -1,6 +1,6 @@
 import { useState, Ref } from 'react'
 
-import { Filename } from 'components/filename'
+import { InputFilename } from 'components/input-filename'
 import { TextArea } from 'components/text-area'
 import { TextOutput } from 'components/text-output'
 
@@ -19,7 +19,7 @@ export function ContentArea (props: ContentAreaProps) {
     <S.Container>
       <S.Top>
         <TextFileIcon />
-        <Filename inputRef={props.inputRef} />
+        <InputFilename inputRef={props.inputRef} />
       </S.Top>
 
       <S.Left>

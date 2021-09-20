@@ -2,10 +2,10 @@ import { Ref } from 'react'
 
 import * as S from './styles'
 
-type FilenameProps = {
+type InputFilenameProps = {
   inputRef: Ref<HTMLInputElement>
 }
 
-export function Filename (props: FilenameProps) {
+export function InputFilename (props: InputFilenameProps) {
   return <S.Input type='text' placeholder='Nome do arquivo' ref={props.inputRef} />
 }
