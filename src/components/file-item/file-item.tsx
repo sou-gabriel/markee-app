@@ -1,7 +1,7 @@
 import { StatusIcon } from 'components/status-icon'
 
-import { ReactComponent as FileIcon } from 'assets/images/file-text.svg'
-import { ReactComponent as DeleteIcon } from 'assets/images/delete-icon.svg'
+import { ReactComponent as FileIcon } from 'resources/assets/images/file-text.svg'
+import { ReactComponent as DeleteIcon } from 'resources/assets/images/delete-icon.svg'
 
 import * as S from './styles'
 

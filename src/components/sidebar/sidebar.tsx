@@ -4,8 +4,8 @@ import { v4 as uuid } from 'uuid'
 
 import { ListFiles } from 'components/file-list'
 
-import { ReactComponent as Logo } from 'assets/images/logo.svg'
-import { ReactComponent as PlusIcon } from 'assets/images/plus-symbol.svg'
+import { ReactComponent as Logo } from 'resources/assets/images/logo.svg'
+import { ReactComponent as PlusIcon } from 'resources/assets/images/plus-symbol.svg'
 
 import * as S from './styles'
 

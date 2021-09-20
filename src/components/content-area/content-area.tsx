@@ -4,7 +4,7 @@ import { Filename } from 'components/filename'
 import { TextArea } from 'components/text-area'
 import { TextOutput } from 'components/text-output'
 
-import { ReactComponent as TextFileIcon } from 'assets/images/file-text-blue.svg'
+import { ReactComponent as TextFileIcon } from 'resources/assets/images/file-text-blue.svg'
 
 import * as S from './styles'
 

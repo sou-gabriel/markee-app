@@ -1,5 +1,5 @@
-import { ReactComponent as EditingIcon } from 'assets/images/editing-icon.svg'
-import { ReactComponent as SavedIcon } from 'assets/images/saved-icon.svg'
+import { ReactComponent as EditingIcon } from 'resources/assets/images/editing-icon.svg'
+import { ReactComponent as SavedIcon } from 'resources/assets/images/saved-icon.svg'
 
 import * as S from './styles'
 

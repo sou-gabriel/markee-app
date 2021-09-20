@@ -1,4 +1,4 @@
-import { ReactComponent as SavingIcon } from 'assets/images/saving-icon.svg'
+import { ReactComponent as SavingIcon } from 'resources/assets/images/saving-icon.svg'
 
 import styled, { keyframes } from 'styled-components/macro'
 
