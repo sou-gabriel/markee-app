@@ -1,8 +1,8 @@
-import { useState, RefObject } from 'react'
+import { RefObject, Dispatch, SetStateAction } from 'react'
 
 import { v4 as uuid } from 'uuid'
 
-import { ListFiles } from 'components/file-list'
+import { FileList } from 'components/file-list'
 
 import { ReactComponent as Logo } from 'resources/assets/images/logo.svg'
 import { ReactComponent as PlusIcon } from 'resources/assets/images/plus-symbol.svg'
@@ -13,15 +13,15 @@ import { FileType } from 'resources/types/file'
 
 type SidebarProps = {
   inputRef: RefObject<HTMLInputElement>
+  files: FileType[]
+  setFiles: Dispatch<SetStateAction<FileType[]>>
 }
 
-export function Sidebar (props: SidebarProps) {
-  const [files, setFiles] = useState<FileType[]>([])
-
+export function Sidebar ({ inputRef, files, setFiles }: SidebarProps) {
   const handleButtonNewFileClick = () => {
-    props.inputRef.current?.focus()
+    inputRef.current?.focus()
 
-    const inactiveFiles = files.map(file => ({
+    const inactiveFiles = files.map<FileType>(file => ({
       ...file,
       active: false,
     }))
@@ -52,7 +52,11 @@ export function Sidebar (props: SidebarProps) {
         Adicionar arquivo
       </S.ButtonNewFile>
 
-      <ListFiles files={files} />
+      <FileList
+        inputRef={inputRef}
+        files={files}
+        setFiles={setFiles}
+      />
     </S.Sidebar>
   )
 }

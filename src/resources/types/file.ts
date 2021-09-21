@@ -1,7 +1,9 @@
+import { StatusType } from './status'
+
 export type FileType = {
   id: string
   name: string
   content: string
   active: boolean
-  status: 'editing' | 'saving' | 'saved'
+  status: StatusType
 }

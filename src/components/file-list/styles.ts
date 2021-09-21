@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro'
 
-export const ListFiles = styled.ul`
+export const FileList = styled.ul`
   padding-left: 0;
 `
