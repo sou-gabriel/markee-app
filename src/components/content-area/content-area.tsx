@@ -77,7 +77,7 @@ export function ContentArea ({ inputRef, files, setFiles }: ContentAreaProps) {
 
       <S.Left>
         <S.TextArea
-          placeholder='Insira aqui seu texto mardown'
+          placeholder='Insira aqui seu texto markdown'
           value={fileActive?.content || ''}
           onChange={handleTextAreaChange}
         />
