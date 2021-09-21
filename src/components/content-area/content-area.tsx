@@ -1,4 +1,4 @@
-import { Ref, Dispatch, SetStateAction, ChangeEvent } from 'react'
+import { Ref, ChangeEvent } from 'react'
 
 import { ReactComponent as TextFileIcon } from 'resources/assets/images/file-text-blue.svg'
 import { ReactComponent as FileNotFoundIcon } from 'resources/assets/images/file-not-found.svg'
@@ -25,30 +25,13 @@ import('highlight.js').then(hljs => {
 
 type ContentAreaProps = {
   inputRef: Ref<HTMLInputElement>
-  files: FileType[]
-  setFiles: Dispatch<SetStateAction<FileType[]>>
+  fileActive: FileType | undefined
+  onFilenameChange: (event: ChangeEvent<HTMLInputElement>) => void
+  onTextAreaChange: (event: ChangeEvent<HTMLTextAreaElement>) => void
 }
 
-export function ContentArea ({ inputRef, files, setFiles }: ContentAreaProps) {
-  const fileActive: FileType | undefined = files.find(file => file.active)
-
-  const handleFilenameChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const updatedFilename = event.target.value
-
-    setFiles(prevFiles => prevFiles.map<FileType>(file => file.active
-      ? { ...file, name: updatedFilename, status: 'editing' }
-      : file,
-    ))
-  }
-
-  const handleTextAreaChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
-    const updatedValueOfTextArea = event?.target.value
-
-    setFiles(prevFiles => prevFiles.map<FileType>(file => file.active
-      ? { ...file, content: updatedValueOfTextArea, status: 'editing' }
-      : file,
-    ))
-  }
+export function ContentArea (props: ContentAreaProps) {
+  const { inputRef, fileActive, onFilenameChange, onTextAreaChange } = props
 
   if (!fileActive) {
     return (
@@ -71,7 +54,7 @@ export function ContentArea ({ inputRef, files, setFiles }: ContentAreaProps) {
           placeholder='Nome do arquivo'
           ref={inputRef}
           value={fileActive?.name || ''}
-          onChange={handleFilenameChange}
+          onChange={onFilenameChange}
         />
       </S.Top>
 
@@ -79,7 +62,7 @@ export function ContentArea ({ inputRef, files, setFiles }: ContentAreaProps) {
         <S.TextArea
           placeholder='Insira aqui seu texto markdown'
           value={fileActive?.content || ''}
-          onChange={handleTextAreaChange}
+          onChange={onTextAreaChange}
         />
       </S.Left>
 

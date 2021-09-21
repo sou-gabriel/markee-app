@@ -1,6 +1,4 @@
-import { RefObject, Dispatch, SetStateAction } from 'react'
-
-import { v4 as uuid } from 'uuid'
+import { MouseEvent } from 'react'
 
 import { FileItem } from 'components/file-item'
 
@@ -11,28 +9,14 @@ import { FileType } from 'resources/types/file'
 import * as S from './styles'
 
 type SidebarProps = {
-  inputRef: RefObject<HTMLInputElement>
   files: FileType[]
-  setFiles: Dispatch<SetStateAction<FileType[]>>
+  onCreateNewFile: () => void
+  onChangeFile: (file: FileType) => (event: MouseEvent<HTMLAnchorElement>) => void
+  onDeleteFile: (file: FileType) => () => void
 }
 
-export function Sidebar ({ inputRef, files, setFiles }: SidebarProps) {
-  const handleButtonNewFileClick = () => {
-    inputRef.current?.focus()
-
-    const inactiveFiles = files.map<FileType>(file => ({
-      ...file,
-      active: false,
-    }))
-
-    setFiles([...inactiveFiles, {
-      id: uuid(),
-      name: 'Sem título',
-      content: '',
-      active: true,
-      status: 'saved',
-    }])
-  }
+export function Sidebar (props: SidebarProps) {
+  const { files, onCreateNewFile, onChangeFile, onDeleteFile } = props
 
   return (
     <S.Sidebar>
@@ -46,7 +30,7 @@ export function Sidebar ({ inputRef, files, setFiles }: SidebarProps) {
         <S.LargeDecorativeLine />
       </S.SecondaryTitle>
 
-      <S.ButtonNewFile onClick={handleButtonNewFileClick}>
+      <S.ButtonNewFile onClick={onCreateNewFile}>
         <PlusIcon />
         Adicionar arquivo
       </S.ButtonNewFile>
@@ -55,9 +39,9 @@ export function Sidebar ({ inputRef, files, setFiles }: SidebarProps) {
         {files.map(file => (
           <FileItem
             key={file.id}
-            inputRef={inputRef}
             file={file}
-            setFiles={setFiles}
+            onChangeFile={onChangeFile}
+            onDeleteFile={onDeleteFile}
           />
         ))}
       </S.FileList>

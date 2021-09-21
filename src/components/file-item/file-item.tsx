@@ -1,4 +1,4 @@
-import { MouseEvent, Dispatch, SetStateAction, RefObject } from 'react'
+import { MouseEvent } from 'react'
 
 import { StatusIcon } from 'components/status-icon'
 
@@ -10,37 +10,26 @@ import { FileType } from 'resources/types/file'
 import * as S from './styles'
 
 type FileItemProps = {
-  inputRef: RefObject<HTMLInputElement>
   file: FileType
-  setFiles: Dispatch<SetStateAction<FileType[]>>
+  onChangeFile: (file: FileType) => (event: MouseEvent<HTMLAnchorElement>) => void
+  onDeleteFile: (file: FileType) => () => void
 }
 
-export function FileItem ({ inputRef, file: clickedFile, setFiles }: FileItemProps) {
-  const handleFileChange = (event: MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault()
-    inputRef.current?.focus()
-
-    setFiles(prevFiles => {
-      return prevFiles.map<FileType>(file => file.id === clickedFile.id
-        ? { ...file, active: true }
-        : { ...file, active: false, status: 'saved' },
-      )
-    })
-  }
-
-  const handleDeleteFile = () => {
-    inputRef.current?.focus()
-    setFiles(prevFiles => prevFiles.filter(file => file.id !== clickedFile.id))
-  }
+export function FileItem (props: FileItemProps) {
+  const { file: clickedFile, onChangeFile, onDeleteFile } = props
 
   return (
     <S.FileItem active={clickedFile.active} status={clickedFile.status}>
       <FileIcon />
-      <S.Link href='/' onClick={handleFileChange}>{clickedFile.name}</S.Link>
+
+      <S.Link href='/' onClick={onChangeFile(clickedFile)}>
+        {clickedFile.name}
+      </S.Link>
+
       {clickedFile.active
         ? <StatusIcon status={clickedFile.status} />
         : (
-          <S.ButtonDeleteFile onClick={handleDeleteFile}>
+          <S.ButtonDeleteFile onClick={onDeleteFile(clickedFile)}>
             <DeleteIcon />
           </S.ButtonDeleteFile>
           )}
