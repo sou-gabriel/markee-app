@@ -9,10 +9,22 @@ type TextAreaProps = {
   setFiles: Dispatch<SetStateAction<FileType[]>>
 }
 
-export function TextArea (props: TextAreaProps) {
-  const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
-    props.setContent(event.target.value)
+export function TextArea ({ content, setFiles }: TextAreaProps) {
+  const handleTextAreaChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    const updatedValueOfTextArea = event?.target.value
+
+    setFiles(prevFiles => prevFiles.map<FileType>(file => file.active
+      ? { ...file, content: updatedValueOfTextArea, status: 'editing' }
+      : file,
+    ))
   }
 
-  return <S.TextArea autoFocus value={props.content} onChange={handleChange} />
+  return (
+    <S.TextArea
+      autoFocus
+      placeholder='Insira aqui seu texto mardown'
+      value={content}
+      onChange={handleTextAreaChange}
+    />
+  )
 }
