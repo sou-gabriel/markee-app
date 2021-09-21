@@ -6,10 +6,14 @@ import { TextOutput } from 'components/text-output'
 
 import { ReactComponent as TextFileIcon } from 'resources/assets/images/file-text-blue.svg'
 
+import { FileType } from 'resources/types/file'
+
 import * as S from './styles'
 
 type ContentAreaProps = {
   inputRef: Ref<HTMLInputElement>
+  file?: FileType
+  setFiles: Dispatch<SetStateAction<FileType[]>>
 }
 
 export function ContentArea (props: ContentAreaProps) {
