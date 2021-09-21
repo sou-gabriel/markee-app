@@ -54,3 +54,7 @@ export const ButtonNewFile = styled.button`${props => css`
   color: ${props.theme.colors.lightBlack};
   background-color: ${props.theme.colors.primary};
 `}`
+
+export const FileList = styled.ul`
+  padding-left: 0;
+`

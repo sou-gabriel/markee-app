@@ -46,3 +46,37 @@ export const Right = styled.div`
   padding-left: 32px;
   grid-area: textOutputContainer;
 `
+
+export const InputFilename = styled.input`
+  width: 100%;
+  height: 23px;
+  margin-left: 12px;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.344rem;
+  letter-spacing: -2%;
+  color: ${props => props.theme.colors.black};
+`
+
+export const TextArea = styled.textarea`
+  width: 100%;
+  height: 100%;
+  font-family: 'Inconsolata', sans-serif;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 1.888rem;
+  color: ${props => props.theme.colors.black};
+  resize: none;
+`
+
+export const Output = styled.output`
+  font-size: 1.8rem;
+  line-height: 2.344rem;
+  color: ${props => props.theme.colors.black};
+
+  > * {
+    margin-top: 0;
+  }
+`
