@@ -19,9 +19,13 @@ import('highlight.js').then(hljs => {
 })
 
 type TextOutputProps = {
-  content: string
+  content?: string | undefined
 }
 
-export function TextOutput (props: TextOutputProps) {
-  return <S.Output dangerouslySetInnerHTML={{ __html: marked(props.content) }} />
+export function TextOutput ({ content }: TextOutputProps) {
+  return (
+    <S.Output
+      dangerouslySetInnerHTML={{ __html: marked(content || '') }}
+    />
+  )
 }
