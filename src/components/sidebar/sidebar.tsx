@@ -1,4 +1,4 @@
-import { useState, RefObject } from 'react'
+import { RefObject, Dispatch, SetStateAction } from 'react'
 
 import { v4 as uuid } from 'uuid'
 
@@ -13,6 +13,8 @@ import { FileType } from 'resources/types/file'
 
 type SidebarProps = {
   inputRef: RefObject<HTMLInputElement>
+  files: FileType[]
+  setFiles: Dispatch<SetStateAction<FileType[]>>
 }
 
 export function Sidebar (props: SidebarProps) {
@@ -52,7 +54,11 @@ export function Sidebar (props: SidebarProps) {
         Adicionar arquivo
       </S.ButtonNewFile>
 
-      <FileList files={props.files} />
+      <FileList
+        inputRef={inputRef}
+        files={files}
+        setFiles={setFiles}
+      />
     </S.Sidebar>
   )
 }
