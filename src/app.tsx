@@ -1,4 +1,5 @@
-import { useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
+
 import { Sidebar } from 'components/sidebar'
 import { ContentArea } from 'components/content-area'
 
