@@ -21,9 +21,9 @@ export function Sidebar (props: SidebarProps) {
   const [files, setFiles] = useState<FileType[]>([])
 
   const handleButtonNewFileClick = () => {
-    props.inputRef.current?.focus()
+    inputRef.current?.focus()
 
-    const inactiveFiles = files.map(file => ({
+    const inactiveFiles = files.map<FileType>(file => ({
       ...file,
       active: false,
     }))
