@@ -1,10 +1,12 @@
 import { Dispatch, ChangeEvent, SetStateAction } from 'react'
 
+import { FileType } from 'resources/types/file'
+
 import * as S from './styles'
 
 type TextAreaProps = {
-  content: string
-  setContent: Dispatch<SetStateAction<string>>
+  content?: string
+  setFiles: Dispatch<SetStateAction<FileType[]>>
 }
 
 export function TextArea (props: TextAreaProps) {
