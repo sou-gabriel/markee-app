@@ -46,8 +46,16 @@ export function App () {
 
   return (
     <S.Container>
-      <Sidebar inputRef={inputRef} />
-      <ContentArea inputRef={inputRef} />
+      <Sidebar
+        inputRef={inputRef}
+        files={files}
+        setFiles={setFiles}
+      />
+      <ContentArea
+        inputRef={inputRef}
+        file={files.find(file => file.active)}
+        setFiles={setFiles}
+      />
     </S.Container>
   )
 }
