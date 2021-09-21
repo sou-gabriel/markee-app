@@ -17,9 +17,7 @@ type SidebarProps = {
   setFiles: Dispatch<SetStateAction<FileType[]>>
 }
 
-export function Sidebar (props: SidebarProps) {
-  const [files, setFiles] = useState<FileType[]>([])
-
+export function Sidebar ({ inputRef, files, setFiles }: SidebarProps) {
   const handleButtonNewFileClick = () => {
     inputRef.current?.focus()
 
