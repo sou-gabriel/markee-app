@@ -6,7 +6,7 @@ import { StatusType } from 'resources/types/status'
 import * as S from './styles'
 
 type StatusIconProps = {
-  status: 'editing' | 'saving' | 'saved'
+  status: StatusType
 }
 
 export function StatusIcon (props: StatusIconProps) {
