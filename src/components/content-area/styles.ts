@@ -46,3 +46,60 @@ export const Right = styled.div`
   padding-left: 32px;
   grid-area: textOutputContainer;
 `
+
+export const InputFilename = styled.input`
+  width: 100%;
+  height: 23px;
+  margin-left: 12px;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.344rem;
+  letter-spacing: -2%;
+  color: ${props => props.theme.colors.black};
+`
+
+export const TextArea = styled.textarea`
+  width: 100%;
+  height: 100%;
+  font-family: 'Inconsolata', sans-serif;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 1.888rem;
+  color: ${props => props.theme.colors.black};
+  resize: none;
+`
+
+export const Output = styled.output`
+  font-size: 1.8rem;
+  line-height: 2.344rem;
+  color: ${props => props.theme.colors.black};
+
+  > * {
+    margin-top: 0;
+  }
+`
+
+export const ContainerErrorMessage = styled.div`
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+export const ErrorMessageParagraph = styled.p`
+  font-family: 'Inconsolata', sans-serif;
+  font-size: 3.5rem;
+  color: ${props => props.theme.colors.gray};
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    transform: rotate(-5deg);
+    opacity: 0.5;
+  }
+`
