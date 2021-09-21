@@ -80,3 +80,26 @@ export const Output = styled.output`
     margin-top: 0;
   }
 `
+
+export const ContainerErrorMessage = styled.div`
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+export const ErrorMessageParagraph = styled.p`
+  font-family: 'Inconsolata', sans-serif;
+  font-size: 3.5rem;
+  color: ${props => props.theme.colors.gray};
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    transform: rotate(-5deg);
+    opacity: 0.5;
+  }
+`

@@ -1,6 +1,7 @@
 import { Ref, Dispatch, SetStateAction, ChangeEvent } from 'react'
 
 import { ReactComponent as TextFileIcon } from 'resources/assets/images/file-text-blue.svg'
+import { ReactComponent as FileNotFoundIcon } from 'resources/assets/images/file-not-found.svg'
 import { FileType } from 'resources/types/file'
 
 import marked from 'marked'
@@ -47,6 +48,17 @@ export function ContentArea ({ inputRef, files, setFiles }: ContentAreaProps) {
       ? { ...file, content: updatedValueOfTextArea, status: 'editing' }
       : file,
     ))
+  }
+
+  if (!fileActive) {
+    return (
+      <S.ContainerErrorMessage>
+        <S.ErrorMessageParagraph>
+          <FileNotFoundIcon />
+          Nenhum arquivo encontrado
+        </S.ErrorMessageParagraph>
+      </S.ContainerErrorMessage>
+    )
   }
 
   return (
