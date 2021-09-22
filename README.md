@@ -44,7 +44,7 @@ Executando um dos comandos abaixo será levantado um servidor de desenvolvimento
 ```bash
 $ yarn dev
 # ou
-$ npm dev
+$ npm run dev
 ```
 
 ---
