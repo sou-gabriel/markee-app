@@ -21,13 +21,16 @@ export const useFiles = () => {
       const isLocalforageEmpty = files === null
 
       if (isLocalforageEmpty) {
-        setFiles([{
+        const initialFile: FileType = {
           id: uuid(),
           name: 'Sem título',
           content: '',
           active: true,
           status: 'saved',
-        }])
+        }
+
+        setFiles([initialFile])
+        window.history.pushState(null, '', `/file/${initialFile.id}`)
 
         return
       }
@@ -79,19 +82,24 @@ export const useFiles = () => {
       active: false,
     }))
 
-    setFiles([...inactiveFiles, {
+    const newFile: FileType = {
       id: uuid(),
       name: 'Sem título',
       content: '',
       active: true,
       status: 'saved',
-    }])
+    }
+
+    setFiles([...inactiveFiles, newFile])
+    window.history.pushState(null, '', `/file/${newFile.id}`)
   }
 
   const handleChangeFile = (clickedFile: FileType) => {
     return (event: MouseEvent<HTMLAnchorElement>) => {
       event.preventDefault()
       inputRef.current?.focus()
+
+      window.history.pushState(null, '', `/file/${clickedFile.id}`)
 
       setFiles(prevFiles => {
         return prevFiles.map<FileType>(file => file.id === clickedFile.id
