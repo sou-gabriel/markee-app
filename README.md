@@ -1,5 +1,5 @@
 <div align='center'>
-  <img src='src\resources\assets\images\logo.svg'>
+  <img src='src/resources/assets/images/logo.svg'>
   <p>Um editor markdown desenvolvido em React.JS</p>
 </div>
 
