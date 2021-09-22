@@ -5,9 +5,38 @@ import { v4 as uuid } from 'uuid'
 import { FileType } from 'resources/types/file'
 import { StatusType } from 'resources/types/status'
 
+import localforage from 'localforage'
+
 export const useFiles = () => {
   const inputRef = useRef<HTMLInputElement>(null)
   const [files, setFiles] = useState<FileType[]>([])
+
+  useEffect(() => {
+    localforage.setItem('files', files)
+  }, [files])
+
+  useEffect(() => {
+    const showFilesFromLocalForage = async () => {
+      const files = await localforage.getItem<FileType[] | null>('files')
+      const isLocalforageEmpty = files === null
+
+      if (isLocalforageEmpty) {
+        setFiles([{
+          id: uuid(),
+          name: 'Sem título',
+          content: '',
+          active: true,
+          status: 'saved',
+        }])
+
+        return
+      }
+
+      setFiles(files)
+    }
+
+    showFilesFromLocalForage()
+  }, [])
 
   useEffect(() => {
     const fileActive = files.find(file => file.active)
@@ -99,7 +128,6 @@ export const useFiles = () => {
   return {
     inputRef,
     files,
-    setFiles,
     handleCreateNewFile,
     handleChangeFile,
     handleDeleteFile,
