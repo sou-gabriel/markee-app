@@ -17,6 +17,7 @@ Criar uma aplicação que converta uma entrada de texto simples em texto [markdo
 - Create React App (CRA);
 - TypeScript;
 - React.js;
+- Styled components;
 - ESLint (Standard);
 - Husky.
 
