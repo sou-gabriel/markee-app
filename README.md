@@ -23,16 +23,14 @@ Criar uma aplicação que converta uma entrada de texto simples em texto [markdo
 
 ## Como usar
 ### Passo 01: Clonando a aplicação
-Neste passo será clonado você executará o comando abaixo para clonar os arquivos deste repositório em sua máquina, afim de que possa também usá-lo.
+Neste você executará o comando abaixo para clonar os arquivos deste repositório em sua máquina, afim de que possa também usá-lo localmente.
 
 ```bash
 $ git clone https://github.com/sou-gabriel/markee-app.git
 ```
 
-
 ### Passo 02: Instalando as dependências do projeto
-Rode um dos comandos abaixos no seu gerenciador de pacoter preferido para instalar todas as dependências necessárias para o funcionamento da aplicação.
-
+No seu gerenciador de pacotes preferido execute um dos comandos abaixo para instalar todas as dependências necessárias para o funcionamento da aplicação.
 
 ```bash
 $ yarn
@@ -40,9 +38,8 @@ $ yarn
 $ npm install
 ```
 
-### Passo 03: Levantando um servidor local</h3>
+### Passo 03: Levantando um servidor local
 Executando um dos comandos abaixo será levantado um servidor de desenvolvimento na sua porta 3000: <a href="http://localhost:3000/" target="_blank">http://localhost:3000/</a>.
-
 
 ```bash
 $ yarn dev
