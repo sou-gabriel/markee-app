@@ -3,7 +3,7 @@
   <p>Um editor markdown desenvolvido em React.JS</p>
 </div>
 
-![GIF demonstrativo](.github\demo-markee.gif)
+![GIF demonstrativo](.github/demo-markee.gif)
 
 ---
 
