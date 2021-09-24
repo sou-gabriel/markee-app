@@ -90,7 +90,7 @@ export const useFiles = () => {
       status: 'saved',
     }
 
-    setFiles([...inactiveFiles, newFile])
+    setFiles([newFile, ...inactiveFiles])
     window.history.pushState(null, '', `/file/${newFile.id}`)
   }
 
