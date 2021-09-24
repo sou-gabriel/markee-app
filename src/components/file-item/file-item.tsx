@@ -19,7 +19,11 @@ export function FileItem (props: FileItemProps) {
   const { file: clickedFile, onChangeFile, onDeleteFile } = props
 
   return (
-    <S.FileItem active={clickedFile.active} status={clickedFile.status}>
+    <S.FileItem
+      active={clickedFile.active}
+      status={clickedFile.status}
+      title={`Acessar ${clickedFile.name}`}
+    >
       <FileIcon />
 
       <S.Link href='/' onClick={onChangeFile(clickedFile)}>

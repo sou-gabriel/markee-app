@@ -10,7 +10,17 @@ export const Container = styled.main`
     "textAreaContainer textOutputContainer"
   ;
   row-gap: 41px;
-  padding: 24px 240px 42px 24px;
+  padding: 24px 24px 42px 24px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr 1fr;
+    grid-template-areas: 
+    "filenameContainer"
+    "textAreaContainer"
+    "textOutputContainer";
+    row-gap: 20px;
+  }
 `
 
 export const Top = styled.div`
@@ -32,19 +42,35 @@ export const Left = styled.div`
     width: 2px;
     height: 100%;
     margin: 5px 0;
-    background-color: ${props => props.theme.colors.black};
+    border-radius: 999px;
     position: absolute;
     top: 50%;
     right: 0;
     transform: translateY(-50%);
+    background-color: ${props => props.theme.colors.black};
     opacity: 12%;
-    border-radius: 999px;
+  }
+
+  @media (max-width: 1024px) {
+    padding-right: 0;
+
+    &::after {
+      width: 100%;
+      height: 2px;
+      top: initial;
+      bottom: 0;
+      left: 0;
+    }
   }
 `
 
 export const Right = styled.div`
   padding-left: 32px;
   grid-area: textOutputContainer;
+
+  @media (max-width: 1024px) {
+    padding-left: 0;
+  }
 `
 
 export const InputFilename = styled.input`
@@ -66,7 +92,7 @@ export const TextArea = styled.textarea`
   font-family: 'Inconsolata', sans-serif;
   font-weight: 500;
   font-size: 1.8rem;
-  line-height: 1.888rem;
+  line-height: 2.344rem;
   color: ${props => props.theme.colors.black};
   resize: none;
 `
