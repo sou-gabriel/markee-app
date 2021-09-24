@@ -5,6 +5,7 @@ export const Sidebar = styled.aside`
   height: 100%;
   padding: 45px 32px;
   background-color: ${props => props.theme.colors.black};
+  flex-shrink: 0;
 `
 
 export const PrimaryTitle = styled.h1`
