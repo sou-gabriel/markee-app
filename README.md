@@ -8,7 +8,7 @@
 ---
 
 ## Sobre
-Trata-se de uma aplicação web desenvolvida para fins próprios de aprendizagem do ecossistema React.js. O desenvolvimento desta aplicação ocorreu durante o Bootcamp de React.js da [brainn.co](https://brainn.co/).
+Trata-se de uma aplicação web desenvolvida para fins próprios de aprendizagem do ecossistema React.js.
 
 ## Objetivo
 Criar uma aplicação que converta uma entrada de texto simples em texto [markdown](https://docs.pipz.com/central-de-ajuda/learning-center/guia-basico-de-markdown#open).
